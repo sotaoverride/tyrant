@@ -2,6 +2,7 @@
 #define CORE_HEADER
 #define QUEUE_SIZE 55
 
+enum Component {temperatre, humidity};
 typedef struct CoreRequest{
 	char dest[4];
 	char org[4];
@@ -25,7 +26,7 @@ typedef struct CoreQueue{
 } CoreQueue;
 
 typedef struct CoreComp{
-	char comp_abv[4];
+	char* comp_abv;
 	CoreQueue incoming_queue;
 	CoreQueue outgoing_queue;
 } CoreComp;
